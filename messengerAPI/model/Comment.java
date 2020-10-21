@@ -4,26 +4,26 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-@XmlRootElement
-public class Message {
+public class Comment {
 	private long id;
 	private String message;
 	private Date created;
 	private String author;
 	private Map<Long, Comment> comments = new HashMap<>();
 
-	public Message() {
+	public Comment() {
 
 	}
 
-	public Message(long id, String message, String author) {
+	public Comment(long id, String message, String author) {
+		super();
 		this.id = id;
 		this.message = message;
-		this.author = author;
 		this.created = new Date();
+		this.author = author;
+
 	}
 
 	public long getId() {
